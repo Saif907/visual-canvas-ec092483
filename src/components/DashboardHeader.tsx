@@ -1,55 +1,72 @@
-import { Bell, Users, Eye, Calendar, X, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Bell, Users, Eye, Calendar, X, MessageCircle, Palette } from "lucide-react";
+import ThemeSettings from "@/components/ThemeSettings";
 
 interface DashboardHeaderProps {
   sidebarCollapsed: boolean;
 }
 
 export default function DashboardHeader({ sidebarCollapsed }: DashboardHeaderProps) {
+  const [themeOpen, setThemeOpen] = useState(false);
+
   return (
-    <header
-      className={`sticky top-0 z-40 h-16 flex items-center justify-between px-6 bg-glass backdrop-blur-[20px] border-b border-divider shadow-header transition-all duration-300 ${
-        sidebarCollapsed ? "ml-[80px]" : "ml-[280px]"
-      }`}
-    >
-      {/* Left */}
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 text-text-secondary text-sm">
-          <Users size={18} />
-          <span>No Accounts</span>
-          <ChevronDown />
-        </div>
-      </div>
-
-      {/* Right */}
-      <div className="flex items-center gap-3">
-        <button className="w-9 h-9 rounded-full flex items-center justify-center text-success hover:bg-secondary transition-colors">
-          <Users size={20} />
-        </button>
-        <button className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors">
-          <Eye size={20} />
-        </button>
-
-        {/* Date filter */}
-        <div className="flex items-center gap-2 px-3 h-9 rounded-lg border border-divider text-sm text-foreground">
-          <Calendar size={16} className="text-text-secondary" />
-          <span>All Time</span>
-          <X size={14} className="text-text-secondary cursor-pointer" />
+    <>
+      <header
+        className={`sticky top-0 z-40 h-16 flex items-center justify-between px-6 bg-glass backdrop-blur-[20px] border-b border-divider shadow-header transition-all duration-300 ${
+          sidebarCollapsed ? "ml-[80px]" : "ml-[280px]"
+        }`}
+      >
+        {/* Left */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 text-text-secondary text-sm">
+            <Users size={18} />
+            <span>No Accounts</span>
+            <ChevronDown />
+          </div>
         </div>
 
-        <button className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors relative">
-          <Bell size={20} />
-        </button>
-        <button className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors relative">
-          <MessageCircle size={20} />
-          <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-loss" />
-        </button>
+        {/* Right */}
+        <div className="flex items-center gap-3">
+          <button className="w-9 h-9 rounded-full flex items-center justify-center text-success hover:bg-secondary transition-colors">
+            <Users size={20} />
+          </button>
+          <button className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors">
+            <Eye size={20} />
+          </button>
 
-        {/* Avatar */}
-        <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-foreground" style={{ backgroundColor: "hsl(36, 100%, 50%)" }}>
-          T
+          {/* Date filter */}
+          <div className="flex items-center gap-2 px-3 h-9 rounded-lg border border-divider text-sm text-foreground">
+            <Calendar size={16} className="text-text-secondary" />
+            <span>All Time</span>
+            <X size={14} className="text-text-secondary cursor-pointer" />
+          </div>
+
+          <button className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors relative">
+            <Bell size={20} />
+          </button>
+          <button className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors relative">
+            <MessageCircle size={20} />
+            <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-loss" />
+          </button>
+
+          {/* Theme toggle */}
+          <button
+            onClick={() => setThemeOpen(true)}
+            className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-secondary transition-colors"
+            title="Theme settings"
+          >
+            <Palette size={20} />
+          </button>
+
+          {/* Avatar */}
+          <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-foreground" style={{ backgroundColor: "hsl(36, 100%, 50%)" }}>
+            T
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      <ThemeSettings open={themeOpen} onClose={() => setThemeOpen(false)} />
+    </>
   );
 }
 
