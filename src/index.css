@@ -114,10 +114,10 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar — hidden until hover/scroll */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -125,13 +125,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(213 10% 60% / 0.3);
+  background: transparent;
   border-radius: 9999px;
-  transition: background 0.2s;
+  transition: background 0.25s ease;
+}
+
+/* Show thumb when the scrollable container is hovered or actively scrolling */
+*:hover::-webkit-scrollbar-thumb,
+*:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(213 10% 60% / 0.28);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(213 10% 60% / 0.5);
+  background: hsl(213 10% 60% / 0.50) !important;
 }
 
 ::-webkit-scrollbar-corner {
@@ -141,5 +147,9 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: hsl(213 10% 60% / 0.3) transparent;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: hsl(213 10% 60% / 0.28) transparent;
 }

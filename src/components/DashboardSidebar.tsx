@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
   Monitor,
@@ -10,7 +11,7 @@ import {
   BarChart3,
   Radio,
   FolderOpen,
-  Target,
+  Lightbulb,
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
@@ -18,27 +19,23 @@ import {
 interface NavItem {
   icon: React.ElementType;
   label: string;
-  active?: boolean;
+  path?: string;
   badge?: string;
   hasChevron?: boolean;
-  comingSoon?: boolean;
 }
 
 const menuItems: NavItem[] = [
-  { icon: LayoutDashboard, label: "Dashboard", active: true },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/" },
   { icon: Monitor, label: "Accounts", hasChevron: true },
   { icon: CreditCard, label: "Plans", badge: "NEW", hasChevron: true },
   { icon: TrendingUp, label: "Live Trade" },
   { icon: Pencil, label: "Daily Journal" },
-  { icon: Table2, label: "Close Trade" },
+  { icon: Table2, label: "Trades", path: "/trades" },
   { icon: BookOpen, label: "Notebook" },
   { icon: BarChart3, label: "Reports" },
   { icon: Radio, label: "News & Sessions" },
   { icon: FolderOpen, label: "File Manager", badge: "NEW" },
-];
-
-const comingSoonItems: NavItem[] = [
-  { icon: Target, label: "Goals", comingSoon: true },
+  { icon: Lightbulb, label: "Strategies", path: "/strategies" },
 ];
 
 interface DashboardSidebarProps {
@@ -47,6 +44,9 @@ interface DashboardSidebarProps {
 }
 
 export default function DashboardSidebar({ collapsed, onToggle }: DashboardSidebarProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <aside
       className={`fixed top-0 left-0 h-screen bg-background shadow-sidebar z-50 transition-all duration-300 flex flex-col ${
@@ -80,19 +80,13 @@ export default function DashboardSidebar({ collapsed, onToggle }: DashboardSideb
       {/* Nav Items */}
       <nav className="flex-1 px-3 space-y-0.5 overflow-y-auto">
         {menuItems.map((item) => (
-          <SidebarItem key={item.label} item={item} collapsed={collapsed} />
-        ))}
-
-        {/* Coming Soon Section */}
-        {!collapsed && (
-          <div className="px-3 pt-4 pb-2">
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-text-disabled">
-              Coming Soon
-            </span>
-          </div>
-        )}
-        {comingSoonItems.map((item) => (
-          <SidebarItem key={item.label} item={item} collapsed={collapsed} />
+          <SidebarItem
+            key={item.label}
+            item={item}
+            collapsed={collapsed}
+            active={item.path ? location.pathname === item.path : false}
+            onClick={() => item.path && navigate(item.path)}
+          />
         ))}
       </nav>
 
@@ -111,14 +105,23 @@ export default function DashboardSidebar({ collapsed, onToggle }: DashboardSideb
   );
 }
 
-function SidebarItem({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
+function SidebarItem({
+  item,
+  collapsed,
+  active,
+  onClick,
+}: {
+  item: NavItem;
+  collapsed: boolean;
+  active: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
+      onClick={onClick}
       className={`w-full flex items-center gap-3 h-11 rounded-lg px-3 transition-colors text-sm font-normal ${
-        item.active
+        active
           ? "bg-sidebar-accent text-sidebar-accent-foreground"
-          : item.comingSoon
-          ? "text-text-disabled cursor-default"
           : "text-text-secondary hover:bg-sidebar-accent/50 hover:text-foreground"
       }`}
     >
