@@ -31,7 +31,7 @@ const menuItems: NavItem[] = [
   { icon: TrendingUp, label: "Live Trade" },
   { icon: Pencil, label: "Daily Journal" },
   { icon: Table2, label: "Trades", path: "/trades" },
-  { icon: BookOpen, label: "Notebook" },
+  { icon: BookOpen, label: "Notebook", path: "/notebook" },
   { icon: BarChart3, label: "Reports" },
   { icon: Radio, label: "News & Sessions" },
   { icon: FolderOpen, label: "File Manager", badge: "NEW" },
