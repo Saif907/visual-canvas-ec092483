@@ -7,7 +7,7 @@ export default function DailyPnLChart() {
   const [tab, setTab] = useState<"daily" | "cumulative">("daily");
 
   return (
-    <div className="bg-card rounded-lg p-6 shadow-card">
+    <div className="bg-card rounded-lg p-6 card-boundary">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-baseline gap-2">

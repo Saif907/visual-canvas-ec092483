@@ -9,7 +9,7 @@ interface MetricCardProps {
 
 export function MetricCard({ title, children, className = "" }: MetricCardProps) {
   return (
-    <div className={`bg-card rounded-lg p-6 shadow-card min-h-[162px] ${className}`}>
+    <div className={`bg-card rounded-lg p-6 card-boundary min-h-[162px] ${className}`}>
       <h3 className="text-sm font-semibold text-foreground mb-3">{title}</h3>
       {children}
     </div>
