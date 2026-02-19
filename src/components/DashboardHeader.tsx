@@ -12,9 +12,14 @@ export default function DashboardHeader({ sidebarCollapsed }: DashboardHeaderPro
   return (
     <>
       <header
-        className={`sticky top-0 z-40 h-16 flex items-center justify-between px-6 bg-glass backdrop-blur-[20px] border-b border-divider shadow-header transition-all duration-300 ${
+        className={`sticky top-0 z-40 h-16 flex items-center justify-between px-6 backdrop-blur-[20px] border-b transition-all duration-300 ${
           sidebarCollapsed ? "ml-[80px]" : "ml-[280px]"
         }`}
+        style={{
+          backgroundColor: "hsl(var(--sidebar-background))",
+          borderColor: "hsl(var(--sidebar-border))",
+          boxShadow: "0 1px 0 0 hsl(var(--sidebar-border)), 0 4px 16px -4px hsl(213 22% 5% / 0.15)",
+        }}
       >
         {/* Left */}
         <div className="flex items-center gap-3">
