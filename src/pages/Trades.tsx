@@ -12,7 +12,6 @@ import {
   Download,
   ChevronLeft,
   ChevronRight,
-  MoreHorizontal,
   DollarSign,
   Target,
 } from "lucide-react";
@@ -168,13 +167,6 @@ function TradeRowCard({ trade }: { trade: Trade }) {
           <p className={`text-sm font-semibold ${isWin ? "text-success" : "text-loss"}`}>
             {trade.returnPct > 0 ? "+" : ""}{trade.returnPct.toFixed(2)}%
           </p>
-        </div>
-
-        {/* Actions */}
-        <div className="ml-auto">
-          <button className="w-8 h-8 rounded-lg flex items-center justify-center text-text-secondary hover:bg-secondary/60 transition-colors">
-            <MoreHorizontal size={16} />
-          </button>
         </div>
       </div>
     </div>
