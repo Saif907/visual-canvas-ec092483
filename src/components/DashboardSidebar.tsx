@@ -12,6 +12,7 @@ import {
   Radio,
   FolderOpen,
   Lightbulb,
+  Sparkles,
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
@@ -36,6 +37,7 @@ const menuItems: NavItem[] = [
   { icon: Radio, label: "News & Sessions" },
   { icon: FolderOpen, label: "File Manager", badge: "NEW" },
   { icon: Lightbulb, label: "Strategies", path: "/strategies" },
+  { icon: Sparkles, label: "AI Chat", path: "/ai-chat", badge: "NEW" },
 ];
 
 interface DashboardSidebarProps {

@@ -9,6 +9,7 @@ import Trades from "./pages/Trades";
 import Strategies from "./pages/Strategies";
 import StrategyDetail from "./pages/StrategyDetail";
 import TradeDetail from "./pages/TradeDetail";
+import AiChat from "./pages/AiChat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/strategies" element={<Strategies />} />
             <Route path="/strategies/:id" element={<StrategyDetail />} />
             <Route path="/trades/:id" element={<TradeDetail />} />
+            <Route path="/ai-chat" element={<AiChat />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
