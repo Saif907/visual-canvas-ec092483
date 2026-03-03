@@ -13,6 +13,7 @@ import {
   FolderOpen,
   Lightbulb,
   Sparkles,
+  CalendarDays,
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
@@ -34,6 +35,7 @@ const menuItems: NavItem[] = [
   { icon: Table2, label: "Trades", path: "/trades" },
   { icon: BookOpen, label: "Notebook" },
   { icon: BarChart3, label: "Reports" },
+  { icon: CalendarDays, label: "Calendar", path: "/calendar" },
   { icon: Radio, label: "News & Sessions" },
   { icon: FolderOpen, label: "File Manager", badge: "NEW" },
   { icon: Lightbulb, label: "Strategies", path: "/strategies" },
