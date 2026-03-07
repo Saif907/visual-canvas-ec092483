@@ -11,6 +11,7 @@ import StrategyDetail from "./pages/StrategyDetail";
 import TradeDetail from "./pages/TradeDetail";
 import AiChat from "./pages/AiChat";
 import CalendarPage from "./pages/Calendar";
+import CustomDashboard from "./pages/CustomDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
