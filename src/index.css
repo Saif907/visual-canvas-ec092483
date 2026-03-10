@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -103,6 +104,162 @@
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   SKIN: Midnight Glass — Glassmorphism + Neon
+   ═══════════════════════════════════════════════════════════ */
+.skin-midnight-glass {
+  --background: 240 33% 4%;
+  --foreground: 240 20% 95%;
+
+  --card: 240 20% 8% / 0.55;
+  --card-foreground: 240 20% 95%;
+
+  --popover: 240 20% 10%;
+  --popover-foreground: 240 20% 95%;
+
+  --primary: 271 91% 65%;
+  --primary-foreground: 240 33% 4%;
+
+  --secondary: 240 15% 15%;
+  --secondary-foreground: 240 20% 90%;
+
+  --muted: 240 15% 15%;
+  --muted-foreground: 240 10% 55%;
+
+  --accent: 160 84% 60%;
+  --accent-foreground: 240 33% 4%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 271 60% 50% / 0.15;
+  --input: 271 60% 50% / 0.15;
+  --ring: 271 91% 65%;
+
+  --radius: 20px;
+
+  --sidebar-background: 240 20% 6% / 0.6;
+  --sidebar-foreground: 240 10% 55%;
+  --sidebar-primary: 271 91% 65%;
+  --sidebar-primary-foreground: 240 33% 4%;
+  --sidebar-accent: 271 91% 65% / 0.1;
+  --sidebar-accent-foreground: 271 91% 75%;
+  --sidebar-border: 271 60% 50% / 0.1;
+  --sidebar-ring: 271 91% 65%;
+
+  --surface: 240 20% 8%;
+  --glass: 240 33% 4% / 0.6;
+  --text-secondary: 240 10% 55%;
+  --text-disabled: 240 10% 35%;
+  --divider: 271 60% 50% / 0.1;
+  --success: 160 84% 55%;
+  --loss: 0 72% 55%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKIN: Carbon Terminal — Hacker Aesthetic
+   ═══════════════════════════════════════════════════════════ */
+.skin-carbon-terminal {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 88%;
+
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 88%;
+
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 88%;
+
+  --primary: 152 100% 50%;
+  --primary-foreground: 0 0% 0%;
+
+  --secondary: 0 0% 8%;
+  --secondary-foreground: 0 0% 80%;
+
+  --muted: 0 0% 8%;
+  --muted-foreground: 0 0% 45%;
+
+  --accent: 38 92% 50%;
+  --accent-foreground: 0 0% 0%;
+
+  --destructive: 0 84% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 100% / 0.08;
+  --input: 0 0% 100% / 0.08;
+  --ring: 152 100% 50%;
+
+  --radius: 4px;
+
+  --sidebar-background: 0 0% 2%;
+  --sidebar-foreground: 0 0% 45%;
+  --sidebar-primary: 152 100% 50%;
+  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-accent: 152 100% 50% / 0.08;
+  --sidebar-accent-foreground: 152 100% 55%;
+  --sidebar-border: 0 0% 100% / 0.06;
+  --sidebar-ring: 152 100% 50%;
+
+  --surface: 0 0% 4%;
+  --glass: 0 0% 0% / 0.9;
+  --text-secondary: 0 0% 45%;
+  --text-disabled: 0 0% 28%;
+  --divider: 0 0% 100% / 0.06;
+  --success: 152 100% 50%;
+  --loss: 0 72% 50%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKIN: Soft Depth — Premium Warm Layers
+   ═══════════════════════════════════════════════════════════ */
+.skin-soft-depth {
+  --background: 240 7% 8%;
+  --foreground: 40 20% 95%;
+
+  --card: 240 5% 11%;
+  --card-foreground: 40 20% 95%;
+
+  --popover: 240 5% 12%;
+  --popover-foreground: 40 20% 95%;
+
+  --primary: 38 92% 55%;
+  --primary-foreground: 240 7% 8%;
+
+  --secondary: 240 5% 15%;
+  --secondary-foreground: 40 15% 85%;
+
+  --muted: 240 5% 15%;
+  --muted-foreground: 40 5% 50%;
+
+  --accent: 38 92% 55%;
+  --accent-foreground: 240 7% 8%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 40 10% 50% / 0.08;
+  --input: 40 10% 50% / 0.08;
+  --ring: 38 92% 55%;
+
+  --radius: 12px;
+
+  --sidebar-background: 240 6% 9%;
+  --sidebar-foreground: 40 5% 50%;
+  --sidebar-primary: 38 92% 55%;
+  --sidebar-primary-foreground: 240 7% 8%;
+  --sidebar-accent: 38 92% 55% / 0.08;
+  --sidebar-accent-foreground: 38 92% 65%;
+  --sidebar-border: 40 10% 50% / 0.06;
+  --sidebar-ring: 38 92% 55%;
+
+  --surface: 240 5% 11%;
+  --glass: 240 7% 8% / 0.85;
+  --text-secondary: 40 5% 50%;
+  --text-disabled: 40 5% 32%;
+  --divider: 40 10% 50% / 0.06;
+  --success: 145 63% 49%;
+  --loss: 0 72% 51%;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -112,9 +269,17 @@
     @apply bg-background text-foreground font-sans;
     font-family: 'Public Sans', sans-serif;
   }
+
+  /* Carbon Terminal uses monospace feel */
+  .skin-carbon-terminal body,
+  .skin-carbon-terminal .sidebar-container,
+  .skin-carbon-terminal header {
+    font-family: 'JetBrains Mono', 'Public Sans', monospace;
+    letter-spacing: -0.01em;
+  }
 }
 
-/* ── Sidebar boundary ─────────────────────────────────────── */
+/* ── Default sidebar boundary ─────────────────────────────── */
 .sidebar-container {
   background-color: hsl(var(--sidebar-background));
   border-right: 1px solid hsl(var(--sidebar-border));
@@ -125,7 +290,7 @@
   box-shadow: 1px 0 0 0 hsl(214 20% 88%), 8px 0 20px -6px hsl(213 22% 11% / 0.07);
 }
 
-/* ── Card boundary ────────────────────────────────────────── */
+/* ── Default card boundary ────────────────────────────────── */
 .card-boundary {
   border: 1px solid hsl(var(--border));
   box-shadow: 0 0 0 1px hsl(213 10% 60% / 0.07), 0 4px 16px -4px hsl(213 22% 5% / 0.28);
@@ -135,7 +300,183 @@
   box-shadow: 0 0 0 1px hsl(214 20% 88% / 0.6), 0 2px 12px -3px hsl(213 22% 11% / 0.07);
 }
 
-/* Custom Scrollbar — hidden until hover/scroll */
+/* ═══════════════════════════════════════════════════════════
+   SKIN OVERRIDES: Midnight Glass
+   ═══════════════════════════════════════════════════════════ */
+
+/* Background noise pattern */
+.skin-midnight-glass body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 20% 50%, hsl(271 91% 65% / 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsl(160 84% 60% / 0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.skin-midnight-glass .sidebar-container {
+  background: linear-gradient(180deg, hsl(240 20% 8% / 0.7), hsl(240 20% 5% / 0.5));
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-right: 1px solid hsl(271 60% 50% / 0.12);
+  box-shadow:
+    1px 0 0 0 hsl(271 60% 50% / 0.08),
+    8px 0 40px -8px hsl(271 91% 30% / 0.15);
+}
+
+.skin-midnight-glass .card-boundary {
+  background: hsl(240 20% 8% / 0.45);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 1px solid hsl(271 60% 50% / 0.12);
+  box-shadow:
+    0 0 0 1px hsl(271 60% 50% / 0.06),
+    0 8px 32px -8px hsl(271 91% 20% / 0.25),
+    inset 0 1px 0 0 hsl(271 60% 80% / 0.04);
+}
+
+/* Header floating pill */
+.skin-midnight-glass .header-bar {
+  margin: 12px 16px 0;
+  border-radius: 20px;
+  background: hsl(240 20% 8% / 0.5);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid hsl(271 60% 50% / 0.12);
+  box-shadow:
+    0 4px 24px -4px hsl(271 91% 20% / 0.2),
+    inset 0 1px 0 0 hsl(271 60% 80% / 0.04);
+}
+
+/* Nav glow underline for active items */
+.skin-midnight-glass .nav-item-active {
+  background: transparent !important;
+  position: relative;
+}
+.skin-midnight-glass .nav-item-active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: hsl(271 91% 65%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px 1px hsl(271 91% 65% / 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKIN OVERRIDES: Carbon Terminal
+   ═══════════════════════════════════════════════════════════ */
+
+/* Dot-grid background */
+.skin-carbon-terminal body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle, hsl(0 0% 100% / 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.skin-carbon-terminal .sidebar-container {
+  background-color: hsl(0 0% 2%);
+  border-right: none;
+  box-shadow: none;
+  border-left: 2px solid hsl(152 100% 50%);
+}
+
+.skin-carbon-terminal .card-boundary {
+  border: 1px solid hsl(0 0% 100% / 0.06);
+  border-radius: 4px;
+  box-shadow: none;
+  position: relative;
+}
+
+/* Scanline overlay */
+.skin-carbon-terminal .card-boundary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(0 0% 100% / 0.008) 2px,
+    hsl(0 0% 100% / 0.008) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Header minimal line */
+.skin-carbon-terminal .header-bar {
+  background: transparent;
+  border-bottom: 1px solid hsl(152 100% 50% / 0.25);
+  box-shadow: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* Nav active: left accent bar */
+.skin-carbon-terminal .nav-item-active {
+  background: hsl(152 100% 50% / 0.06) !important;
+  border-left: 2px solid hsl(152 100% 50%);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Uppercase section labels */
+.skin-carbon-terminal .sidebar-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKIN OVERRIDES: Soft Depth
+   ═══════════════════════════════════════════════════════════ */
+
+.skin-soft-depth .sidebar-container {
+  background-color: hsl(240 6% 9%);
+  border-right: 1px solid hsl(40 10% 50% / 0.05);
+  box-shadow:
+    1px 0 0 0 hsl(40 10% 50% / 0.04),
+    6px 0 20px -4px hsl(240 7% 4% / 0.4);
+}
+
+.skin-soft-depth .card-boundary {
+  border: 1px solid hsl(40 10% 50% / 0.06);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 2px 0 hsl(240 7% 4% / 0.2),
+    0 4px 12px -2px hsl(240 7% 4% / 0.25),
+    0 12px 36px -6px hsl(240 7% 4% / 0.2);
+}
+
+/* Header depth bar */
+.skin-soft-depth .header-bar {
+  background-color: hsl(240 6% 9%);
+  border-bottom: 1px solid hsl(40 10% 50% / 0.05);
+  box-shadow:
+    0 1px 0 0 hsl(40 10% 50% / 0.04),
+    0 4px 16px -2px hsl(240 7% 4% / 0.35);
+}
+
+/* Nav active: filled rounded pill with shadow */
+.skin-soft-depth .nav-item-active {
+  background: hsl(38 92% 55% / 0.1) !important;
+  box-shadow:
+    inset 0 1px 2px hsl(240 7% 4% / 0.15),
+    0 1px 0 hsl(40 10% 50% / 0.04);
+  border-radius: 10px;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -151,7 +492,6 @@
   transition: background 0.25s ease;
 }
 
-/* Show thumb when the scrollable container is hovered or actively scrolling */
 *:hover::-webkit-scrollbar-thumb,
 *:focus-within::-webkit-scrollbar-thumb {
   background: hsl(213 10% 60% / 0.28);
@@ -173,4 +513,20 @@
 
 *:hover {
   scrollbar-color: hsl(213 10% 60% / 0.28) transparent;
+}
+
+/* Skin-specific scrollbar colors */
+.skin-midnight-glass *:hover::-webkit-scrollbar-thumb,
+.skin-midnight-glass *:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(271 60% 50% / 0.3);
+}
+
+.skin-carbon-terminal *:hover::-webkit-scrollbar-thumb,
+.skin-carbon-terminal *:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(152 100% 50% / 0.2);
+}
+
+.skin-soft-depth *:hover::-webkit-scrollbar-thumb,
+.skin-soft-depth *:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(38 92% 55% / 0.2);
 }
