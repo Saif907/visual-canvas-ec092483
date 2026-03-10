@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -18,6 +17,7 @@ import {
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface NavItem {
   icon: React.ElementType;
@@ -52,10 +52,18 @@ interface DashboardSidebarProps {
 export default function DashboardSidebar({ collapsed, onToggle }: DashboardSidebarProps) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { skin } = useTheme();
+
+  // Skin-specific sidebar container class overrides
+  const sidebarSkinClass =
+    skin === "carbon-terminal" ? "sidebar-container" :
+    skin === "midnight-glass" ? "sidebar-container" :
+    skin === "soft-depth" ? "sidebar-container" :
+    "sidebar-container";
 
   return (
     <aside
-      className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 flex flex-col sidebar-container ${
+      className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 flex flex-col ${sidebarSkinClass} ${
         collapsed ? "w-[80px]" : "w-[280px]"
       }`}
     >
@@ -74,14 +82,14 @@ export default function DashboardSidebar({ collapsed, onToggle }: DashboardSideb
       {/* Menu Label */}
       {!collapsed && (
         <div className="px-6 py-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-text-secondary opacity-60">
+          <span className={`text-xs font-semibold uppercase tracking-wider text-text-secondary opacity-60 sidebar-label`}>
             Menu
           </span>
         </div>
       )}
 
       {/* Nav Items */}
-      <nav className="flex-1 px-3 space-y-0.5 overflow-y-auto pb-4">
+      <nav className={`flex-1 px-3 space-y-0.5 overflow-y-auto pb-4 ${skin === "soft-depth" ? "px-4" : ""}`}>
         {menuItems.map((item) => (
           <SidebarItem
             key={item.label}
@@ -89,11 +97,12 @@ export default function DashboardSidebar({ collapsed, onToggle }: DashboardSideb
             collapsed={collapsed}
             active={item.path ? location.pathname === item.path : false}
             onClick={() => item.path && navigate(item.path)}
+            skin={skin}
           />
         ))}
       </nav>
 
-      {/* Edge toggle button — sits at the right boundary */}
+      {/* Edge toggle button */}
       <button
         onClick={onToggle}
         className="absolute top-1/2 -translate-y-1/2 -right-3.5 w-7 h-7 rounded-full border border-sidebar-border bg-sidebar-bg shadow-md flex items-center justify-center text-text-secondary hover:text-foreground hover:border-primary/40 transition-all duration-200 z-10"
@@ -110,20 +119,26 @@ function SidebarItem({
   collapsed,
   active,
   onClick,
+  skin,
 }: {
   item: NavItem;
   collapsed: boolean;
   active: boolean;
   onClick: () => void;
+  skin: string;
 }) {
+  const activeClass = active ? "nav-item-active" : "";
+
+  const baseStyles = `w-full flex items-center gap-3 h-11 rounded-lg px-3 transition-colors text-sm font-normal relative ${activeClass}`;
+
+  const stateStyles = active
+    ? "bg-sidebar-accent text-sidebar-accent-foreground"
+    : "text-text-secondary hover:bg-sidebar-accent/50 hover:text-foreground";
+
   return (
     <button
       onClick={onClick}
-      className={`w-full flex items-center gap-3 h-11 rounded-lg px-3 transition-colors text-sm font-normal ${
-        active
-          ? "bg-sidebar-accent text-sidebar-accent-foreground"
-          : "text-text-secondary hover:bg-sidebar-accent/50 hover:text-foreground"
-      }`}
+      className={`${baseStyles} ${stateStyles}`}
     >
       <item.icon size={20} className="shrink-0" />
       {!collapsed && (

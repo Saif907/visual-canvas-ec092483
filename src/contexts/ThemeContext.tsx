@@ -1,13 +1,48 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type ThemeMode = "light" | "dark" | "system";
+export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth";
 
 export interface ColorPreset {
   name: string;
-  primary: string; // HSL values
+  primary: string;
   accent: string;
-  preview: string; // hex for preview swatches
+  preview: string;
 }
+
+export interface SkinInfo {
+  id: SkinId;
+  name: string;
+  description: string;
+  previewColors: [string, string, string]; // bg, card, accent
+}
+
+export const UI_SKINS: SkinInfo[] = [
+  {
+    id: "default",
+    name: "Classic",
+    description: "Clean modern design",
+    previewColors: ["#161B22", "#1C2128", "#68CDF9"],
+  },
+  {
+    id: "midnight-glass",
+    name: "Midnight Glass",
+    description: "Glassmorphism & neon glow",
+    previewColors: ["#0A0A0F", "#14142266", "#A855F7"],
+  },
+  {
+    id: "carbon-terminal",
+    name: "Carbon Terminal",
+    description: "Hacker minimal aesthetic",
+    previewColors: ["#000000", "#0A0A0A", "#00FF88"],
+  },
+  {
+    id: "soft-depth",
+    name: "Soft Depth",
+    description: "Premium layered warmth",
+    previewColors: ["#141418", "#1E1E24", "#F5A623"],
+  },
+];
 
 export const COLOR_PRESETS: ColorPreset[] = [
   { name: "Cyan", primary: "199 92% 69%", accent: "199 92% 48%", preview: "#68CDF9" },
@@ -28,6 +63,8 @@ interface ThemeContextType {
   fontSize: number;
   setFontSize: (size: number) => void;
   resolvedMode: "light" | "dark";
+  skin: SkinId;
+  setSkin: (skin: SkinId) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -49,6 +86,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [fontSize, setFontSize] = useState(() => {
     return Number(localStorage.getItem("theme-font-size")) || 16;
   });
+  const [skin, setSkin] = useState<SkinId>(() => {
+    return (localStorage.getItem("theme-skin") as SkinId) || "default";
+  });
 
   const resolvedMode = mode === "system" ? getSystemTheme() : mode;
 
@@ -60,8 +100,20 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("theme-mode", mode);
   }, [mode, resolvedMode]);
 
-  // Apply preset
+  // Apply skin class
   useEffect(() => {
+    const root = document.documentElement;
+    // Remove all skin classes
+    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth");
+    if (skin !== "default") {
+      root.classList.add(`skin-${skin}`);
+    }
+    localStorage.setItem("theme-skin", skin);
+  }, [skin]);
+
+  // Apply preset (only for default skin)
+  useEffect(() => {
+    if (skin !== "default") return; // skins define their own colors
     const p = COLOR_PRESETS.find((c) => c.name === preset) || COLOR_PRESETS[0];
     const root = document.documentElement;
     root.style.setProperty("--primary", p.primary);
@@ -74,7 +126,19 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     root.style.setProperty("--sidebar-accent-foreground", p.primary);
     root.style.setProperty("--sidebar-ring", p.primary);
     localStorage.setItem("theme-preset", preset);
-  }, [preset, resolvedMode]);
+  }, [preset, resolvedMode, skin]);
+
+  // Clear inline overrides when switching to a non-default skin
+  useEffect(() => {
+    if (skin === "default") return;
+    const root = document.documentElement;
+    const props = [
+      "--primary", "--primary-foreground", "--accent", "--ring",
+      "--sidebar-primary", "--sidebar-primary-foreground", "--sidebar-accent",
+      "--sidebar-accent-foreground", "--sidebar-ring",
+    ];
+    props.forEach((p) => root.style.removeProperty(p));
+  }, [skin]);
 
   // Apply font size
   useEffect(() => {
@@ -97,7 +161,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [mode]);
 
   return (
-    <ThemeContext.Provider value={{ mode, setMode, preset, setPreset, fontSize, setFontSize, resolvedMode }}>
+    <ThemeContext.Provider value={{ mode, setMode, preset, setPreset, fontSize, setFontSize, resolvedMode, skin, setSkin }}>
       {children}
     </ThemeContext.Provider>
   );

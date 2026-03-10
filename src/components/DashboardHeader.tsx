@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Bell, Users, Eye, Calendar, X, MessageCircle, Palette } from "lucide-react";
 import ThemeSettings from "@/components/ThemeSettings";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface DashboardHeaderProps {
   sidebarCollapsed: boolean;
@@ -8,17 +9,20 @@ interface DashboardHeaderProps {
 
 export default function DashboardHeader({ sidebarCollapsed }: DashboardHeaderProps) {
   const [themeOpen, setThemeOpen] = useState(false);
+  const { skin } = useTheme();
+
+  // Skin-specific header structural styles
+  const isFloating = skin === "midnight-glass";
+  const marginLeft = sidebarCollapsed ? "ml-[80px]" : "ml-[280px]";
 
   return (
     <>
       <header
-        className={`sticky top-0 z-40 h-16 flex items-center justify-between px-6 backdrop-blur-[20px] border-b transition-all duration-300 ${
-          sidebarCollapsed ? "ml-[80px]" : "ml-[280px]"
-        }`}
+        className={`sticky top-0 z-40 h-16 flex items-center justify-between px-6 backdrop-blur-[20px] border-b transition-all duration-300 header-bar ${marginLeft}`}
         style={{
-          backgroundColor: "hsl(var(--sidebar-background))",
-          borderColor: "hsl(var(--sidebar-border))",
-          boxShadow: "0 1px 0 0 hsl(var(--sidebar-border)), 0 4px 16px -4px hsl(213 22% 5% / 0.15)",
+          backgroundColor: skin === "carbon-terminal" ? "transparent" : skin === "midnight-glass" ? undefined : "hsl(var(--sidebar-background))",
+          borderColor: skin === "carbon-terminal" ? undefined : "hsl(var(--sidebar-border))",
+          boxShadow: skin === "carbon-terminal" || skin === "midnight-glass" ? undefined : "0 1px 0 0 hsl(var(--sidebar-border)), 0 4px 16px -4px hsl(213 22% 5% / 0.15)",
         }}
       >
         {/* Left */}
