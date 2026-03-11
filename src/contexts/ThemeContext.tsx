@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type ThemeMode = "light" | "dark" | "system";
-export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth";
+export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth" | "obsidian-ember" | "void-flux";
 
 export interface ColorPreset {
   name: string;
