@@ -22,7 +22,7 @@ export default function DashboardHeader({ sidebarCollapsed }: DashboardHeaderPro
         style={{
           backgroundColor: skin === "carbon-terminal" || skin === "void-flux" ? "transparent" : skin === "midnight-glass" ? undefined : "hsl(var(--sidebar-background))",
           borderColor: skin === "carbon-terminal" ? undefined : "hsl(var(--sidebar-border))",
-          boxShadow: skin === "carbon-terminal" || skin === "midnight-glass" ? undefined : "0 1px 0 0 hsl(var(--sidebar-border)), 0 4px 16px -4px hsl(213 22% 5% / 0.15)",
+          boxShadow: skin === "carbon-terminal" || skin === "midnight-glass" || skin === "void-flux" ? undefined : "0 1px 0 0 hsl(var(--sidebar-border)), 0 4px 16px -4px hsl(213 22% 5% / 0.15)",
         }}
       >
         {/* Left */}

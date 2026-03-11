@@ -74,7 +74,7 @@ export default function DashboardSidebar({ collapsed, onToggle }: DashboardSideb
             T
           </div>
           {!collapsed && (
-            <span className="text-sm font-bold text-foreground tracking-wide">TradePulse</span>
+            <span className="text-sm font-bold text-foreground tracking-wide">TradeOmen</span>
           )}
         </div>
       </div>
