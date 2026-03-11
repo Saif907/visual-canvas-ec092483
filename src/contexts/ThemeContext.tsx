@@ -116,7 +116,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     // Remove all skin classes
-    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth");
+    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth", "skin-obsidian-ember", "skin-void-flux");
     if (skin !== "default") {
       root.classList.add(`skin-${skin}`);
     }
