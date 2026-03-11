@@ -476,6 +476,278 @@
   border-radius: 10px;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   SKIN: Obsidian Ember — Volcanic Heat & Molten Glow
+   ═══════════════════════════════════════════════════════════ */
+.skin-obsidian-ember {
+  --background: 20 30% 3%;
+  --foreground: 30 15% 90%;
+
+  --card: 15 15% 7%;
+  --card-foreground: 30 15% 90%;
+
+  --popover: 15 15% 8%;
+  --popover-foreground: 30 15% 90%;
+
+  --primary: 14 100% 58%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 15 10% 12%;
+  --secondary-foreground: 30 10% 80%;
+
+  --muted: 15 10% 12%;
+  --muted-foreground: 20 8% 45%;
+
+  --accent: 0 85% 52%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 14 60% 40% / 0.1;
+  --input: 14 60% 40% / 0.1;
+  --ring: 14 100% 58%;
+
+  --radius: 8px;
+
+  --sidebar-background: 15 20% 5%;
+  --sidebar-foreground: 20 8% 45%;
+  --sidebar-primary: 14 100% 58%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 14 100% 58% / 0.1;
+  --sidebar-accent-foreground: 14 100% 68%;
+  --sidebar-border: 14 60% 40% / 0.08;
+  --sidebar-ring: 14 100% 58%;
+
+  --surface: 15 15% 7%;
+  --glass: 20 30% 3% / 0.9;
+  --text-secondary: 20 8% 45%;
+  --text-disabled: 20 8% 28%;
+  --divider: 14 60% 40% / 0.08;
+  --success: 145 63% 49%;
+  --loss: 0 72% 55%;
+}
+
+/* Ember heat shimmer background */
+.skin-obsidian-ember body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 10% 90%, hsl(14 100% 40% / 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 80%, hsl(0 85% 40% / 0.04) 0%, transparent 35%),
+    radial-gradient(ellipse at 50% 0%, hsl(30 80% 20% / 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.skin-obsidian-ember .sidebar-container {
+  background: linear-gradient(180deg, hsl(15 20% 5%), hsl(10 15% 4%));
+  border-right: none;
+  box-shadow:
+    1px 0 0 0 hsl(14 60% 40% / 0.06),
+    8px 0 32px -6px hsl(0 60% 10% / 0.3);
+}
+
+/* Ember right-edge gradient stripe on sidebar */
+.skin-obsidian-ember .sidebar-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    hsl(0 85% 52% / 0.6) 0%,
+    hsl(14 100% 58% / 0.8) 40%,
+    hsl(38 95% 55% / 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.skin-obsidian-ember .card-boundary {
+  border: 1px solid hsl(14 60% 40% / 0.08);
+  border-radius: 8px;
+  box-shadow:
+    0 2px 8px -2px hsl(0 60% 10% / 0.3),
+    0 8px 24px -4px hsl(0 60% 8% / 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bottom ember glow on cards */
+.skin-obsidian-ember .card-boundary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(14 100% 58% / 0.3), hsl(0 85% 52% / 0.2), transparent);
+  pointer-events: none;
+}
+
+.skin-obsidian-ember .header-bar {
+  background: hsl(15 20% 5% / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(14 60% 40% / 0.08);
+  box-shadow:
+    0 1px 0 0 hsl(14 60% 40% / 0.04),
+    0 4px 16px -4px hsl(0 60% 8% / 0.25);
+}
+
+/* Nav active: warm ember fill */
+.skin-obsidian-ember .nav-item-active {
+  background: linear-gradient(135deg, hsl(14 100% 58% / 0.12), hsl(0 85% 52% / 0.08)) !important;
+  border: 1px solid hsl(14 100% 58% / 0.12);
+  box-shadow: 0 0 12px -2px hsl(14 100% 50% / 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKIN: Void Flux — Cosmic Void & Aurora Light
+   ═══════════════════════════════════════════════════════════ */
+.skin-void-flux {
+  --background: 230 20% 2%;
+  --foreground: 210 30% 95%;
+
+  --card: 225 15% 6%;
+  --card-foreground: 210 30% 95%;
+
+  --popover: 225 15% 7%;
+  --popover-foreground: 210 30% 95%;
+
+  --primary: 199 92% 72%;
+  --primary-foreground: 230 20% 2%;
+
+  --secondary: 225 12% 10%;
+  --secondary-foreground: 210 20% 82%;
+
+  --muted: 225 12% 10%;
+  --muted-foreground: 220 10% 42%;
+
+  --accent: 280 60% 65%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 210 30% 50% / 0.06;
+  --input: 210 30% 50% / 0.06;
+  --ring: 199 92% 72%;
+
+  --radius: 14px;
+
+  --sidebar-background: 230 20% 3%;
+  --sidebar-foreground: 220 10% 42%;
+  --sidebar-primary: 199 92% 72%;
+  --sidebar-primary-foreground: 230 20% 2%;
+  --sidebar-accent: 199 92% 72% / 0.08;
+  --sidebar-accent-foreground: 199 92% 80%;
+  --sidebar-border: 210 30% 50% / 0.04;
+  --sidebar-ring: 199 92% 72%;
+
+  --surface: 225 15% 6%;
+  --glass: 230 20% 2% / 0.85;
+  --text-secondary: 220 10% 42%;
+  --text-disabled: 220 10% 25%;
+  --divider: 210 30% 50% / 0.04;
+  --success: 160 72% 52%;
+  --loss: 350 80% 55%;
+}
+
+/* Aurora background wash */
+.skin-void-flux body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 0% 0%, hsl(280 60% 50% / 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 30%, hsl(199 92% 50% / 0.03) 0%, transparent 35%),
+    radial-gradient(ellipse at 30% 100%, hsl(160 72% 50% / 0.02) 0%, transparent 40%);
+  pointer-events: none;
+  animation: auroraShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes auroraShift {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.skin-void-flux .sidebar-container {
+  background: hsl(230 20% 3%);
+  border-right: none;
+  box-shadow: none;
+}
+
+/* Floating sidebar — no visible edge, content breathes */
+.skin-void-flux .sidebar-container::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 0;
+  bottom: 16px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, hsl(199 92% 72% / 0.08), hsl(280 60% 65% / 0.06), transparent);
+}
+
+.skin-void-flux .card-boundary {
+  border: 0.5px solid hsl(210 30% 50% / 0.06);
+  border-radius: 14px;
+  box-shadow:
+    0 1px 0 0 hsl(210 30% 80% / 0.02),
+    0 8px 32px -8px hsl(230 20% 2% / 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top-light gradient — light from above effect */
+.skin-void-flux .card-boundary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(199 92% 72% / 0.15), hsl(280 60% 65% / 0.1), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Header: invisible, borderless — just floating content */
+.skin-void-flux .header-bar {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Nav active: dot indicator + text glow */
+.skin-void-flux .nav-item-active {
+  background: transparent !important;
+  position: relative;
+}
+
+.skin-void-flux .nav-item-active::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: hsl(199 92% 72%);
+  box-shadow: 0 0 8px 2px hsl(199 92% 72% / 0.4);
+}
+
+.skin-void-flux .nav-item-active > .shrink-0 {
+  color: hsl(199 92% 72%);
+  filter: drop-shadow(0 0 4px hsl(199 92% 72% / 0.3));
+}
+
 /* ── Scrollbars ─────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;
@@ -529,4 +801,14 @@
 .skin-soft-depth *:hover::-webkit-scrollbar-thumb,
 .skin-soft-depth *:focus-within::-webkit-scrollbar-thumb {
   background: hsl(38 92% 55% / 0.2);
+}
+
+.skin-obsidian-ember *:hover::-webkit-scrollbar-thumb,
+.skin-obsidian-ember *:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(14 100% 58% / 0.25);
+}
+
+.skin-void-flux *:hover::-webkit-scrollbar-thumb,
+.skin-void-flux *:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(199 92% 72% / 0.15);
 }

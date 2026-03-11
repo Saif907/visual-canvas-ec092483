@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type ThemeMode = "light" | "dark" | "system";
-export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth";
+export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth" | "obsidian-ember" | "void-flux";
 
 export interface ColorPreset {
   name: string;
@@ -41,6 +41,18 @@ export const UI_SKINS: SkinInfo[] = [
     name: "Soft Depth",
     description: "Premium layered warmth",
     previewColors: ["#141418", "#1E1E24", "#F5A623"],
+  },
+  {
+    id: "obsidian-ember",
+    name: "Obsidian Ember",
+    description: "Volcanic heat & molten glow",
+    previewColors: ["#08060A", "#12100E", "#FF4D2A"],
+  },
+  {
+    id: "void-flux",
+    name: "Void Flux",
+    description: "Cosmic void & aurora light",
+    previewColors: ["#050507", "#0A0B10", "#4FC3F7"],
   },
 ];
 
@@ -104,7 +116,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     // Remove all skin classes
-    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth");
+    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth", "skin-obsidian-ember", "skin-void-flux");
     if (skin !== "default") {
       root.classList.add(`skin-${skin}`);
     }
