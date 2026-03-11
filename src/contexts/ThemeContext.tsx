@@ -42,6 +42,18 @@ export const UI_SKINS: SkinInfo[] = [
     description: "Premium layered warmth",
     previewColors: ["#141418", "#1E1E24", "#F5A623"],
   },
+  {
+    id: "obsidian-ember",
+    name: "Obsidian Ember",
+    description: "Volcanic heat & molten glow",
+    previewColors: ["#08060A", "#12100E", "#FF4D2A"],
+  },
+  {
+    id: "void-flux",
+    name: "Void Flux",
+    description: "Cosmic void & aurora light",
+    previewColors: ["#050507", "#0A0B10", "#4FC3F7"],
+  },
 ];
 
 export const COLOR_PRESETS: ColorPreset[] = [
