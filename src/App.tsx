@@ -31,7 +31,7 @@ const App = () => (
             <Route path="/trades/:id" element={<TradeDetail />} />
             <Route path="/ai-chat" element={<AiChat />} />
             <Route path="/calendar" element={<CalendarPage />} />
-            <Route path="/custom-dashboard" element={<CustomDashboard />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
