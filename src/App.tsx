@@ -11,7 +11,7 @@ import StrategyDetail from "./pages/StrategyDetail";
 import TradeDetail from "./pages/TradeDetail";
 import AiChat from "./pages/AiChat";
 import CalendarPage from "./pages/Calendar";
-import CustomDashboard from "./pages/CustomDashboard";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,7 +31,7 @@ const App = () => (
             <Route path="/trades/:id" element={<TradeDetail />} />
             <Route path="/ai-chat" element={<AiChat />} />
             <Route path="/calendar" element={<CalendarPage />} />
-            <Route path="/custom-dashboard" element={<CustomDashboard />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
