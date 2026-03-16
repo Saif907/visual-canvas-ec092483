@@ -72,13 +72,13 @@ export default function Landing() {
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
               className="hidden sm:flex h-9 px-4 items-center rounded-lg text-sm font-medium border border-border/60 text-foreground hover:bg-muted transition-all"
             >
               Sign In
             </button>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
               className="h-9 px-5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-sm"
             >
               Get Started
@@ -129,7 +129,7 @@ export default function Landing() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
               className="group h-12 px-8 rounded-xl text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
             >
               Start 14 Days Free Trial
@@ -498,7 +498,7 @@ export default function Landing() {
                 </div>
 
                 <button
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/dashboard")}
                   className={`w-full h-11 rounded-xl text-sm font-semibold transition-all ${
                     plan.highlighted
                       ? "bg-primary text-primary-foreground hover:opacity-90 shadow-md"
@@ -585,7 +585,7 @@ export default function Landing() {
                 Join thousands of traders who use TradeOmen to track, analyze, and improve their performance every day.
               </p>
               <button
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/dashboard")}
                 className="group h-12 px-8 rounded-xl text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-lg shadow-primary/20 inline-flex items-center gap-2"
               >
                 Start Your Free Trial
