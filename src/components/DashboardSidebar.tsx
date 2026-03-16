@@ -28,7 +28,7 @@ interface NavItem {
 }
 
 const menuItems: NavItem[] = [
-  { icon: LayoutDashboard, label: "Dashboard", path: "/" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Monitor, label: "Accounts", hasChevron: true },
   { icon: CreditCard, label: "Plans", badge: "NEW", hasChevron: true },
   { icon: TrendingUp, label: "Live Trade" },
