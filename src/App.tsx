@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import Landing from "./pages/Landing";
 import Index from "./pages/Index";
 import Trades from "./pages/Trades";
 import Strategies from "./pages/Strategies";
