@@ -13,7 +13,10 @@ export default function DashboardHeader({ sidebarCollapsed }: DashboardHeaderPro
 
   // Skin-specific header structural styles
   const isFloating = skin === "midnight-glass" || skin === "noir-float";
-  const marginLeft = sidebarCollapsed ? "ml-[80px]" : "ml-[280px]";
+  const isNoir = skin === "noir-float";
+  const marginLeft = isNoir
+    ? (sidebarCollapsed ? "ml-[90px]" : "ml-[290px]")
+    : (sidebarCollapsed ? "ml-[80px]" : "ml-[280px]");
 
   return (
     <>

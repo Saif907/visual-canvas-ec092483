@@ -248,7 +248,9 @@ const Index = () => {
 
       <main className={cn(
         "transition-all duration-300 p-6 pb-16",
-        sidebarCollapsed ? "ml-[80px]" : "ml-[280px]",
+        skin === "noir-float"
+          ? (sidebarCollapsed ? "ml-[90px]" : "ml-[290px]")
+          : (sidebarCollapsed ? "ml-[80px]" : "ml-[280px]"),
         skin === "noir-float" && "main-content-shell"
       )}>
         {/* ── Toolbar ── */}

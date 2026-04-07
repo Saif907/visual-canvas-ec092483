@@ -65,7 +65,6 @@ export default function DashboardSidebar({ collapsed, onToggle }: DashboardSideb
       className={`fixed top-0 left-0 z-50 transition-all duration-300 flex flex-col ${sidebarSkinClass} ${
         collapsed ? "w-[80px]" : "w-[280px]"
       }`}
-      style={{ height: skin === "noir-float" ? undefined : "100vh" }}
     >
       {/* Logo */}
       <div className="flex items-center h-16 px-5">
