@@ -91,6 +91,7 @@ function createBlankDashboard(name: string): Dashboard {
 // Component
 // ──────────────────────────────────────────────
 const Index = () => {
+  const { skin } = useTheme();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [dashboards, setDashboards] = useState<Dashboard[]>(() => {
     const loaded = loadDashboards();
@@ -245,7 +246,11 @@ const Index = () => {
       <DashboardSidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(!sidebarCollapsed)} />
       <DashboardHeader sidebarCollapsed={sidebarCollapsed} />
 
-      <main className={cn("transition-all duration-300 p-6 pb-16", sidebarCollapsed ? "ml-[80px]" : "ml-[280px]")}>
+      <main className={cn(
+        "transition-all duration-300 p-6 pb-16",
+        sidebarCollapsed ? "ml-[80px]" : "ml-[280px]",
+        skin === "noir-float" && "main-content-shell"
+      )}>
         {/* ── Toolbar ── */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
