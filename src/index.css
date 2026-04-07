@@ -788,6 +788,113 @@
   filter: drop-shadow(0 0 4px hsl(199 92% 72% / 0.3));
 }
 
+/* ═══════════════════════════════════════════════════════════
+   SKIN: Noir Float — Floating Panels on Pure Black
+   ═══════════════════════════════════════════════════════════ */
+.skin-noir-float {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+
+  --card: 240 6% 12%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 7% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 4%;
+
+  --secondary: 240 5% 16%;
+  --secondary-foreground: 0 0% 90%;
+
+  --muted: 240 5% 16%;
+  --muted-foreground: 240 5% 65%;
+
+  --accent: 142 71% 45%;
+  --accent-foreground: 0 0% 0%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 240 6% 18%;
+  --input: 240 6% 18%;
+  --ring: 0 0% 98%;
+
+  --radius: 8px;
+
+  --sidebar-background: 240 7% 9%;
+  --sidebar-foreground: 240 5% 65%;
+  --sidebar-primary: 0 0% 98%;
+  --sidebar-primary-foreground: 0 0% 4%;
+  --sidebar-accent: 240 6% 15%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 240 6% 14%;
+  --sidebar-ring: 0 0% 98%;
+
+  --surface: 240 7% 9%;
+  --glass: 0 0% 0% / 0.9;
+  --text-secondary: 240 5% 65%;
+  --text-disabled: 240 5% 40%;
+  --divider: 240 6% 18%;
+  --success: 142 71% 45%;
+  --loss: 0 84% 60%;
+}
+
+/* Noir Float — Floating sidebar panel */
+.skin-noir-float .sidebar-container {
+  background-color: hsl(240 7% 9%);
+  border-right: none;
+  border-radius: 0 12px 12px 0;
+  margin: 12px 0 12px 12px;
+  box-shadow:
+    0 0 0 1px hsl(240 6% 18%),
+    0 8px 32px -4px hsl(0 0% 0% / 0.6);
+  height: calc(100vh - 24px) !important;
+}
+
+/* Noir Float — Floating header panel */
+.skin-noir-float .header-bar {
+  background-color: hsl(240 7% 9%);
+  border: none;
+  border-radius: 12px;
+  margin: 12px 12px 0;
+  box-shadow:
+    0 0 0 1px hsl(240 6% 18%),
+    0 4px 20px -4px hsl(0 0% 0% / 0.5);
+}
+
+/* Noir Float — Floating main content shell */
+.skin-noir-float .main-content-shell {
+  background-color: hsl(240 7% 9%);
+  border-radius: 12px;
+  margin: 12px;
+  box-shadow:
+    0 0 0 1px hsl(240 6% 18%),
+    0 8px 32px -4px hsl(0 0% 0% / 0.5);
+  min-height: calc(100vh - 104px);
+}
+
+/* Noir Float — Card style */
+.skin-noir-float .card-boundary {
+  background-color: hsl(240 6% 12%);
+  border: 1px solid hsl(240 6% 18%);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 8px -2px hsl(0 0% 0% / 0.3);
+}
+
+/* Noir Float — Nav active */
+.skin-noir-float .nav-item-active {
+  background: hsl(240 6% 15%) !important;
+  border-radius: 8px;
+}
+
+/* Noir Float — Scrollbar */
+.skin-noir-float *:hover::-webkit-scrollbar-thumb,
+.skin-noir-float *:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(240 5% 65% / 0.2);
+}
+
 /* ── Scrollbars ─────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;

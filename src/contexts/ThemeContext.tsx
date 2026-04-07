@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type ThemeMode = "light" | "dark" | "system";
-export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth" | "obsidian-ember" | "void-flux";
+export type SkinId = "default" | "midnight-glass" | "carbon-terminal" | "soft-depth" | "obsidian-ember" | "void-flux" | "noir-float";
 
 export interface ColorPreset {
   name: string;
@@ -53,6 +53,12 @@ export const UI_SKINS: SkinInfo[] = [
     name: "Void Flux",
     description: "Cosmic void & aurora light",
     previewColors: ["#050507", "#0A0B10", "#4FC3F7"],
+  },
+  {
+    id: "noir-float",
+    name: "Noir Float",
+    description: "Floating panels on pure black",
+    previewColors: ["#000000", "#151517", "#FAFAFA"],
   },
 ];
 
@@ -116,7 +122,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     // Remove all skin classes
-    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth", "skin-obsidian-ember", "skin-void-flux");
+    root.classList.remove("skin-midnight-glass", "skin-carbon-terminal", "skin-soft-depth", "skin-obsidian-ember", "skin-void-flux", "skin-noir-float");
     if (skin !== "default") {
       root.classList.add(`skin-${skin}`);
     }
