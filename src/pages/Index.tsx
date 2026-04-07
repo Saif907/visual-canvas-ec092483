@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
 import { Responsive, WidthProvider, Layout } from "react-grid-layout";
 import DashboardSidebar from "@/components/DashboardSidebar";
 import DashboardHeader from "@/components/DashboardHeader";
